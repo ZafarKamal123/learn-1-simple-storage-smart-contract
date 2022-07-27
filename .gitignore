@@ -1,2 +1,6 @@
 # Visual studio code specifics
 .vscode
+# Node modules
+/node_modules
+# Environment Vars
+.env

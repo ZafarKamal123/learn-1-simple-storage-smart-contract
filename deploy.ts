@@ -1,12 +1,12 @@
 import { ethers } from "ethers";
 import fs from "fs-extra"
-import "dotenv/config";
+import * as dotenv from "dotenv";
 
+dotenv.config();
 
 async function main(): Promise<void> {
-    const proxy: string = "http://127.0.0.1:7545";
     // Connecting to local blockchain
-    const provider = new ethers.providers.JsonRpcProvider(proxy);
+    const provider = new ethers.providers.JsonRpcProvider(process.env.RPC);
     const wallet = new ethers.Wallet(
         process.env.PRIVATE_KEY as string,
         provider

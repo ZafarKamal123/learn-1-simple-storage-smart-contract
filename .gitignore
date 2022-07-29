@@ -4,3 +4,7 @@
 /node_modules
 # Environment Vars
 .env
+# Typescript build
+/dist
+# Compiled contracts
+/contracts-build

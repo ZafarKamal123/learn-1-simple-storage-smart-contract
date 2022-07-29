@@ -1,0 +1,40 @@
+name: Build Typescript, Smart Contracts
+on: [push]
+jobs:
+  build-typescript:
+    name: Build Typescript
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [17.x]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v1
+
+      - name: Using Node version ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: npm install, build dev version
+        run: |
+          npm install
+          npm run compile:ts
+
+  build-contracts:
+    name: Build Typescript
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [17.x]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v1
+
+      - name: Using Node version ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: npm install, build dev version
+        run: |
+          npm install
+          npm run compile:contracts

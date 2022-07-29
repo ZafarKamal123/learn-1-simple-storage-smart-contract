@@ -2,7 +2,7 @@ name: Build Typescript, Smart Contracts
 on: [push]
 jobs:
   build-typescript:
-    name: Build Typescript
+    name: Typescript
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -21,7 +21,7 @@ jobs:
           npm run compile:ts
 
   build-contracts:
-    name: Build Typescript
+    name: Contracts
     runs-on: ubuntu-latest
     strategy:
       matrix:

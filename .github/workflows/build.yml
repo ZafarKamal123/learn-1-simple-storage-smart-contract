@@ -1,4 +1,4 @@
-name: Build Typescript, Smart Contracts
+name: Build
 on: [push]
 jobs:
   build-typescript:
